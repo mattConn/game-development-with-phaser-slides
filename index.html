@@ -4,11 +4,11 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>Game Development with Phaser</title>
 
 		<link rel="stylesheet" href="css/reset.css">
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+		<link rel="stylesheet" href="css/theme/night.css">
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/monokai.css">
@@ -23,10 +23,101 @@
 		</script>
 	</head>
 	<body>
+
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+
+			<section data-markdown>
+				<textarea data-template>
+					## Game Development with Phaser
+					Matthew Connelly
+
+					<small>Twitter: @mattconndev</small>
+				</textarea>
+			</section>
+
+			<section data-markdown>
+				<textarea data-template>
+					### A Framework for 2D Games
+					- Uses Pixi JS, a canvas frameork
+					- Handles physics
+						- Gravity
+						- Collision
+						- Position
+						- Velocity/speed
+					- A LOT More (sound)
+				</textarea>
+			</section>
+
+			<section data-markdown>
+				<textarea data-template>
+					### Where to Start?
+					What game would I play? 
+
+					<div class = "img-ctn">
+						<img style="width: 43%; display: inline-block;" src="images/SMA-cover.jpg">
+						<img style="width: 43%; display: inline-block;" src="images/spelunky-cover.jpg">
+					</div>
+				</textarea>
+			</section>
+
+			<section data-markdown>
+				<textarea data-template>
+					### What features do I want? 
+
+					Using qualitative language:
+
+					- Jumping
+						- Not so much, not double jumping
+					- Bouncing
+					- Fast and Loose
+						- But not too much
+
+				</textarea>
+			</section>
+
+			<section data-markdown>
+				<textarea data-template>
+					### 3 Functions To Rule Them All
+					<small>API Specifics</small>
+					```
+					function Preload() {
+						// Load assets
+					}
+
+					function Create() {
+						// Configure game objects
+					}
+
+					function Update() {
+						// The game loop (where the magic happens)
+					}
+					```
+				</textarea>
+			</section>
+
+			<section data-markdown>
+				<textarea data-template>
+					### Beyond The API 
+					<small>Wrapping the API in your own code</small>
+
+					<pre>
+					<code style="border-bottom: dashed 2px white;">
+					// base game object
+					class GameObj {
+						constructor(game, image, width, height) {
+							// Phaser group and display image
+							this.group = game.physics.add.group();
+							this.image = image;
+
+							// dimensions
+							this.width = width;
+							this.height = height;
+						}
+					</code>
+					</pre>
+				</textarea>
+				</section>
 			</div>
 		</div>
 
